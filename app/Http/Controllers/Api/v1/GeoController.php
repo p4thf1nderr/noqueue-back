@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Spatie\Geocoder\Geocoder;
 use Illuminate\Support\Facades\Response;
+use Geodistance\Location;
+use function Geodistance\meters;
 
 class GeoController extends Controller
 {
