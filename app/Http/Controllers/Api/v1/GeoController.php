@@ -13,7 +13,9 @@ class GeoController extends Controller
     {
         $client = new \GuzzleHttp\Client();
 
-        $result = $client->post("https://maps.googleapis.com/maps/api/geocode/json?language=ru&latlng=59.93609,30.314721&key=AIzaSyAvncEBSWFrTPJqgGYLpqAixjJR0MIzA4M");
+        $input = $request->all();
+
+        $result = $client->post("https://maps.googleapis.com/maps/api/geocode/json?language=ru&latlng=".$input['lat'].",".$input['lng']."&key=".config('geocoder.key'));
         
         $json = json_decode($result->getBody());
 
