@@ -16,15 +16,6 @@ class Mall extends JsonResource
      */
     public function toArray($request)
     {
-        $categories = collect();
-
-        $this->courts->each(function($item) use (&$categories) {
-            $ctg = $item->goods->map(function($item){
-                return $item->category;
-            });
-            return $categories = $categories->concat($ctg);
-        });
-
         return [
             'id' => $this->id,
             'name' => $this->name,
@@ -32,7 +23,7 @@ class Mall extends JsonResource
             'photo' => $this->photo,
             'rating' => $random = Arr::random([3, 4, 5]), //TODO: расчет оценок, с комментами и модерацией
             'cafes' => CourtResource::collection($this->whenLoaded('courts')),
-            'categories' => $categories->unique()->toArray(), //TODO: через resource, чтобы не отображать в списке
+            // 'categories' => $categories->unique()->toArray(), //TODO: через resource, чтобы не отображать в списке
             'distance' => $this->distance,
         ];
     }

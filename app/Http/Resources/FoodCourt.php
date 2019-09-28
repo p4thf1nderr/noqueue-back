@@ -17,6 +17,10 @@ class FoodCourt extends JsonResource
      */
     public function toArray($request)
     {
+        $ctg = $this->goods->map(function($item){
+            return $item->category;
+        });
+      
         return [
             'id' => $this->id,
             'name' => $this->name,
@@ -24,6 +28,7 @@ class FoodCourt extends JsonResource
             'rating' => $random = Arr::random([3, 4, 5]), //TODO: расчет оценок, с комментами и модерацией
             'goods' => GoodResource::collection($this->whenLoaded('goods')),
             'orders' => OrderResource::collection($this->whenLoaded('orders')),
+            'categories' => $ctg->unique()->toArray(), 
         ];
     }
 }
