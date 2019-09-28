@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // api приложения noqueue
 Route::resource('v1/malls', 'Api\v1\MallController');
 Route::resource('v1/cafes', 'Api\v1\FoodCourtController');
+Route::resource('v1/orders', 'Api\v1\OrderController');

@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Models\Order;
+use App\Models\Good;
 use App\Models\FoodCourt;
 use Carbon\Carbon;
 use App\User;
@@ -54,5 +55,10 @@ class OrdersTableSeeder extends Seeder
             'created_at' => Carbon::now()->setTimezone('Europe/Moscow'),
             'updated_at' => Carbon::now()->setTimezone('Europe/Moscow'),
         ]);
+
+        $orders = Order::all()->each(function($item, $key) {
+            $goods = Good::all()->random(3);
+            $item->goods()->saveMany($goods);
+        });
     }
 }
