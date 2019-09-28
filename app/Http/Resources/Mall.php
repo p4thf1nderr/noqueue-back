@@ -29,6 +29,7 @@ class Mall extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'address' => $this->address,
+            'photo' => $this->photo,
             'rating' => $random = Arr::random([3, 4, 5]), //TODO: расчет оценок, с комментами и модерацией
             'cafes' => CourtResource::collection($this->whenLoaded('courts')),
             'categories' => $categories->unique()->toArray(), //TODO: через resource, чтобы не отображать в списке

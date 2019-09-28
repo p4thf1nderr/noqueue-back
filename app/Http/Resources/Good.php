@@ -21,7 +21,7 @@ class Good extends JsonResource
             'cooking_time' => $this->cooking_time,
             'description' => $this->description,
             'price' => $this->price,
-            'photo' => PhotoResource::collection($this->photo),
+            'photo' => $this->photo->isNotEmpty() ? $this->photo->first()->link : "",
         ];
     }
 }
