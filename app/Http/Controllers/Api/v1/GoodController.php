@@ -4,11 +4,9 @@ namespace App\Http\Controllers\Api\v1;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\FoodCourt;
-use App\Http\Resources\FoodCourt as FoodCourtResource;
-use Illuminate\Support\Facades\Response;
+use App\Http\Resources\Good;
 
-class FoodCourtController extends Controller
+class GoodController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +15,7 @@ class FoodCourtController extends Controller
      */
     public function index()
     {
-        return FoodCourtResource::collection(FoodCourt::paginate(5));
+        return GoodResource::collection(FoodCourt::paginate(5));
     }
 
     /**
@@ -49,7 +47,7 @@ class FoodCourtController extends Controller
      */
     public function show($id)
     {
-        return new FoodCourtResource(FoodCourt::with(['goods', 'orders'])->find($id));
+        return new OrderResource(Order::with(['photo'])->find($id));
     }
 
     /**

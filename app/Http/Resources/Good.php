@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\Photo as PhotoResource;
 
 class Good extends JsonResource
 {
@@ -20,6 +21,7 @@ class Good extends JsonResource
             'cooking_time' => $this->cooking_time,
             'description' => $this->description,
             'price' => $this->price,
+            'photo' => PhotoResource::collection($this->photo),
         ];
     }
 }

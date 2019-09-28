@@ -19,8 +19,8 @@ class FoodCourt extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'goods' => GoodResource::collection($this->goods),
-            'orders' => OrderResource::collection($this->orders),
+            'goods' => GoodResource::collection($this->whenLoaded('goods')),
+            'orders' => OrderResource::collection($this->whenLoaded('orders')),
         ];
     }
 }
