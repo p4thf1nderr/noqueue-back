@@ -19,7 +19,7 @@ class PhotosTableSeeder extends Seeder
             'good_id' => Good::first()->id,
             'created_at' => Carbon::now()->setTimezone('Europe/Moscow'),
             'updated_at' => Carbon::now()->setTimezone('Europe/Moscow'),
-            'link' => Storage::disk('public')->url('burger.jpg'),
+            'link' => public_path().'/uploads/burger.jpg',
         ]);
     }
 }
