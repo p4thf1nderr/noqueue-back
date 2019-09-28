@@ -20,6 +20,7 @@ class FoodCourt extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'photo' => $this->photo,
             'rating' => $random = Arr::random([3, 4, 5]), //TODO: расчет оценок, с комментами и модерацией
             'goods' => GoodResource::collection($this->whenLoaded('goods')),
             'orders' => OrderResource::collection($this->whenLoaded('orders')),

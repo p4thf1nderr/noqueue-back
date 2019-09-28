@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddImageToMalls extends Migration
+class AddPhotoToCafe extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddImageToMalls extends Migration
      */
     public function up()
     {
-        Schema::table('malls', function (Blueprint $table) {
-            $table->string('photo', 255)->nullable();
+        Schema::table('food_courts', function (Blueprint $table) {
+            $table->string('photo', 255)->nullable();;
         });
     }
 
@@ -25,7 +25,7 @@ class AddImageToMalls extends Migration
      */
     public function down()
     {
-        Schema::table('malls', function (Blueprint $table) {
+        Schema::table('food_courts', function (Blueprint $table) {
             $table->dropColumn('photo');
         });
     }
