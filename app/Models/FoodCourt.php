@@ -19,4 +19,9 @@ class FoodCourt extends Model
     {
         return $this->hasMany(Good::class, 'court_id');
     }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class, 'food_court_id');
+    }
 }

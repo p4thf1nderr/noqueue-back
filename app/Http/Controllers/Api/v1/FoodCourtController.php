@@ -50,19 +50,6 @@ class FoodCourtController extends Controller
     public function show($id)
     {
         return new FoodCourtResource(FoodCourt::find($id));
-
-        // try{
-        //     $court = FoodCourt::findOrfail($id);
-        //     return Response::json($court, 201);
-        // } catch (ModelNotFoundException $e) {
-        //     return Response::json([
-        //         'error' => [
-        //             'message' => 'Food court not found'
-        //         ]
-        //     ], 404);
-        // } catch (\Exception $e) {
-        //     return Response::json($e, 503);
-        // }
     }
 
     /**
