@@ -14,7 +14,14 @@ class MallTableSeeder extends Seeder
     {
         Mall::create([
             'name' => 'ТЦ Адмирал',
-            'address' => 'Малая Морская ул., 4/1, Санкт-Петербург'
+            'address' => 'Малая Морская ул., 4/1, Санкт-Петербург',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at odio leo. Donec nulla ipsum, suscipit in lacus a, aliquet hendrerit nisl. Phasellus feugiat pharetra purus ac iaculis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus et enim sit amet justo fringilla sodales.',
+        ]);
+
+        Mall::create([
+            'name' => 'ТЦ Галлерея',
+            'address' => 'Лиговский пр., 30А, Санкт-Петербург, 191040',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at odio leo. Donec nulla ipsum, suscipit in lacus a, aliquet hendrerit nisl. Phasellus feugiat pharetra purus ac iaculis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus et enim sit amet justo fringilla sodales.',
         ]);
     }
 }

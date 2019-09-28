@@ -17,7 +17,7 @@ class MallController extends Controller
      */
     public function index()
     {
-        return MallResource::collection(Mall::paginate(5));
+        return MallResource::collection(Mall::paginate(5)->sortByDesc('distance'));
     }
 
     /**

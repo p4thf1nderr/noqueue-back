@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\FoodCourt as CourtResource;
+use Illuminate\Support\Arr;
 
 class Mall extends JsonResource
 {
@@ -28,8 +29,10 @@ class Mall extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'address' => $this->address,
+            'rating' => $random = Arr::random([3, 4, 5]), //TODO: расчет оценок, с комментами и модерацией
             'cafes' => CourtResource::collection($this->whenLoaded('courts')),
-            'categories' => $categories->unique(), //TODO: через resource, чтобы не отображать в списке
+            'categories' => $categories->unique()->toArray(), //TODO: через resource, чтобы не отображать в списке
+            'distance' => $this->distance,
         ];
     }
 }
