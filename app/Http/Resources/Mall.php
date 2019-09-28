@@ -19,7 +19,7 @@ class Mall extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'address' => $this->address,
-            'courts' => CourtResource::collection($this->courts),
+            'cafes' => CourtResource::collection($this->whenLoaded('courts')),
         ];
     }
 }

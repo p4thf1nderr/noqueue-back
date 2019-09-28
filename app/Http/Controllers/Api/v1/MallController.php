@@ -49,7 +49,7 @@ class MallController extends Controller
      */
     public function show($id)
     {
-        //
+        return new MallResource(Mall::with(['courts'])->find($id));
     }
 
     /**
