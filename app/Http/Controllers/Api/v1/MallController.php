@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Resources\Mall as MallResource;
 use App\Models\Mall;
+use Geodistance\Location;
+use function Geodistance\meters;
 
 
 class MallController extends Controller
@@ -17,7 +19,20 @@ class MallController extends Controller
      */
     public function index(Request $request)
     {
-        return MallResource::collection(Mall::paginate(5)->sortByDesc('distance'));
+        $input = $request->all();
+
+        $user = new Location($input['lat'], $input['lng']);
+
+        $malls = Mall::all()->each(function($item) use ($user) {
+        
+            $crds = explode(" ", $item->coordinates);
+            
+            $mall = new Location((float)$crds[0], (float)$crds[1]);
+            $item->distance = meters($mall, $user);
+            return $item;
+        });
+
+        return MallResource::collection($malls->sortBy('distance'));
     }
 
     /**
