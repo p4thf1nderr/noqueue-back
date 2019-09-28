@@ -27,5 +27,37 @@ class CategoryTableSeeder extends Seeder
         Category::create([
             'title' => 'Вопперы',
         ]);
+
+        Category::create([
+            'title' => 'Бургеры',
+        ]);
+
+        Category::create([
+            'title' => 'ВОК',
+        ]);
+
+        Category::create([
+            'title' => 'Пиццы',
+        ]);
+
+        Category::create([
+            'title' => 'Вопперы',
+        ]);
+
+        Category::create([
+            'title' => 'Бургеры',
+        ]);
+
+        Category::create([
+            'title' => 'ВОК',
+        ]);
+
+        Category::create([
+            'title' => 'Пиццы',
+        ]);
+
+        Category::create([
+            'title' => 'Вопперы',
+        ]);
     }
 }
