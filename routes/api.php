@@ -23,4 +23,4 @@ Route::resource('v1/cafes', 'Api\v1\FoodCourtController');
 Route::resource('v1/orders', 'Api\v1\OrderController');
 Route::resource('v1/categories', 'Api\v1\CategoryController');
 
-Route::post('v1/address', 'Api\v1\GeoController@sortMalls');
+Route::post('v1/address', 'Api\v1\GeoController@address');
