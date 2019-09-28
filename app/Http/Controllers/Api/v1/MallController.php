@@ -21,18 +21,24 @@ class MallController extends Controller
     {
         $input = $request->all();
 
-        $user = new Location($input['lat'], $input['lng']);
+        if (isset($input['lat']) && isset($input['lng'])) {
 
-        $malls = Mall::all()->each(function($item) use ($user) {
-        
-            $crds = explode(" ", $item->coordinates);
+            $user = new Location($input['lat'], $input['lng']);
+            $malls = Mall::all()->each(function($item) use ($user) {
             
-            $mall = new Location((float)$crds[0], (float)$crds[1]);
-            $item->distance = meters($mall, $user);
-            return $item;
-        });
+                $crds = explode(" ", $item->coordinates);
+                
+                $mall = new Location((float)$crds[0], (float)$crds[1]);
+                $item->distance = meters($mall, $user);
+               
+                return $item;
+            })->sortBy('distance');
 
-        return MallResource::collection($malls->sortBy('distance'));
+        } else {
+            $malls = Mall::all();
+        }
+    
+        return MallResource::collection($malls);
     }
 
     /**
