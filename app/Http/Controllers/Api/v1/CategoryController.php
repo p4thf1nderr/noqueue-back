@@ -4,11 +4,10 @@ namespace App\Http\Controllers\Api\v1;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Resources\Mall as MallResource;
-use App\Models\Mall;
+use App\Http\Resources\Category as CategoryResource;
+use App\Models\Category;
 
-
-class MallController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +16,7 @@ class MallController extends Controller
      */
     public function index()
     {
-        return MallResource::collection(Mall::paginate(5));
+        //
     }
 
     /**
@@ -49,7 +48,7 @@ class MallController extends Controller
      */
     public function show($id)
     {
-        return new MallResource(Mall::with(['courts.goods.category'])->find($id));
+        return new CategoryResource(Category::with(['goods'])->find($id));
     }
 
     /**

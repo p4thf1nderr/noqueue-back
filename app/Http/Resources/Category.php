@@ -4,10 +4,9 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\Good as GoodResource;
-use App\Http\Resources\Order as OrderResource;
-use Illuminate\Support\Arr;
 
-class FoodCourt extends JsonResource
+
+class Category extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -19,10 +18,8 @@ class FoodCourt extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,
-            'rating' => $random = Arr::random([3, 4, 5]), //TODO: расчет оценок, с комментами и модерацией
+            'title' => $this->title,
             'goods' => GoodResource::collection($this->whenLoaded('goods')),
-            'orders' => OrderResource::collection($this->whenLoaded('orders')),
         ];
     }
 }

@@ -14,5 +14,5 @@ class Mall extends Model
     public function courts()
     {
         return $this->hasMany(FoodCourt::class);
-    }
+    }    
 }

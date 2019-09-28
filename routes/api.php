@@ -21,3 +21,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource('v1/malls', 'Api\v1\MallController');
 Route::resource('v1/cafes', 'Api\v1\FoodCourtController');
 Route::resource('v1/orders', 'Api\v1\OrderController');
+Route::resource('v1/categories', 'Api\v1\CategoryController');
