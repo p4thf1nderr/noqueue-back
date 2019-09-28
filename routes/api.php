@@ -17,6 +17,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
-
+// api приложения noqueue
 Route::resource('v1/malls', 'Api\v1\MallController');
+Route::resource('v1/courts', 'Api\v1\FoodCourtController');

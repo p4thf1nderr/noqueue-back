@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Api\v1;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\FoodCourt;
+use App\Http\Resources\FoodCourt as FoodCourtResource;
+use Illuminate\Support\Facades\Response;
 
 class FoodCourtController extends Controller
 {
@@ -14,7 +17,7 @@ class FoodCourtController extends Controller
      */
     public function index()
     {
-        return MallResource::collection(Mall::paginate(5));
+        return FoodCourtResource::collection(FoodCourt::paginate(5));
     }
 
     /**
@@ -46,7 +49,20 @@ class FoodCourtController extends Controller
      */
     public function show($id)
     {
-        //
+        return new FoodCourtResource(FoodCourt::find($id));
+
+        // try{
+        //     $court = FoodCourt::findOrfail($id);
+        //     return Response::json($court, 201);
+        // } catch (ModelNotFoundException $e) {
+        //     return Response::json([
+        //         'error' => [
+        //             'message' => 'Food court not found'
+        //         ]
+        //     ], 404);
+        // } catch (\Exception $e) {
+        //     return Response::json($e, 503);
+        // }
     }
 
     /**
