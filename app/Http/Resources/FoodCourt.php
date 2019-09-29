@@ -18,10 +18,16 @@ class FoodCourt extends JsonResource
     public function toArray($request)
     {
         $ctg = $this->goods->map(function($item){
-            $item->category['goods'] = $item->category->goods;
-
+            $goods = $item->category->goods->map(function($item) {
+                    $link = $item->photo->first()->link;
+                    $item['link'] = $link;
+                return $item;
+            });
+            $item->category['goods'] = $goods;
             return $item->category;
         });
+
+
       
         return [
             'id' => $this->id,
