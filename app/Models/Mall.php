@@ -17,6 +17,4 @@ class Mall extends Model
     {
         return $this->hasMany(FoodCourt::class);
     }
-
-    public function getDistanceAttribute() {}
 }
