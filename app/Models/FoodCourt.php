@@ -10,6 +10,8 @@ class FoodCourt extends Model
 {
     public $timestamps = false;
 
+    protected $guarded = [];
+
     public function mall()
     {
         return $this->belongsTo(Mall::class);

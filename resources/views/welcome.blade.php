@@ -81,18 +81,19 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
-                </div>
+                <form enctype="multipart/form-data" action="http://noqueue.loc/api/import" method="POST">
+                    <!-- Поле MAX_FILE_SIZE должно быть указано до поля загрузки файла -->
+                    <input type="hidden" name="xml" value="30000000" />
+                    <!-- Название элемента input определяет имя в массиве $_FILES -->
+                        <h3>Импорт товаров в сервис noqueue:</h3> <input name="xml" type="file" />
+                    <input type="submit" value="Отправить файл" />
+                </form>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <form method="post" enctype="multipart/form-data" action="http://noqueue.loc/api/confirm">
+                    <div>
+                        <button>Подтвердить</button>
+                    </div>
+                </form>
                 </div>
             </div>
         </div>

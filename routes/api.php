@@ -24,3 +24,7 @@ Route::resource('v1/orders', 'Api\v1\OrderController');
 Route::resource('v1/categories', 'Api\v1\CategoryController');
 
 Route::post('v1/address', 'Api\v1\GeoController@address');
+
+Route::post('import', 'XmlImportController@import');
+
+Route::post('confirm', 'XmlImportController@confirm');

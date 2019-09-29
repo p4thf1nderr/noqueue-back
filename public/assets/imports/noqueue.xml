@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shop>
+    <description>Кафе быстрого питания Кабанчик</description>
+    <mall_id>1</mall_id>
+    <company>ООО Кабанчик</company>
+    <company_img>https://res.cloudinary.com/di3sdycra/image/upload/v1569744445/photo_2019-09-29_11-00-03_adnh8x.jpg</company_img>
+    <url>http://noqueue.ru</url>
+    <currencies>
+        <currency id="RUR" rate="1" />
+    </currencies>
+    <categories>
+            <category id="1">Бургеры</category>
+            <category id="2">Лапша Вок</category>
+    </categories>
+<offers>
+    <offer id="1" available="true">
+        <url>http://noqueue.ru/goods/1/</url>
+        <price>246.00</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://res.cloudinary.com/di3sdycra/image/upload/v1569744713/goods/gamburger-steyk_rmmine.jpg</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+            <name>
+                Гамбургер - стейк
+            </name>
+            <court_id>
+                1
+            </court_id>
+            <category_id>
+                1
+            </category_id>
+            <time>
+                00:05:00
+            </time>
+            <description>
+                Рубленый бифштекс из натуральной цельной говядины на карамелизованной булочке, заправленной горчицей, кетчупом, луком и кусочком маринованного огурчика.  
+            </description>
+     </offer>
+ </offers>
+</shop>
+
