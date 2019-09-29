@@ -36,7 +36,7 @@ class XmlImportController extends Controller
 
     public function confirm()
     {
-        $xmlfile = file_get_contents("/var/www/html/noqueue/public/assets/imports"."/"."noqueue.xml");             
+        $xmlfile = file_get_contents("/home/ubuntu/server/noqueue-back/public/assets/imports"."/"."noqueue.xml");             
         $array = XmlToArray::convert($xmlfile);
 
         // сохранение компании

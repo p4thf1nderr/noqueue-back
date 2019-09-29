@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                <form enctype="multipart/form-data" action="http://noqueue.loc/api/import" method="POST">
+                <form enctype="multipart/form-data" action="http://demo142.delta.vkhackathon.com/api/import" method="POST">
                     <!-- Поле MAX_FILE_SIZE должно быть указано до поля загрузки файла -->
                     <input type="hidden" name="xml" value="30000000" />
                     <!-- Название элемента input определяет имя в массиве $_FILES -->
@@ -89,7 +89,7 @@
                     <input type="submit" value="Отправить файл" />
                 </form>
 
-                <form method="post" enctype="multipart/form-data" action="http://noqueue.loc/api/confirm">
+                <form method="post" enctype="multipart/form-data" action="http://demo142.delta.vkhackathon.com/api/confirm">
                     <div>
                         <button>Подтвердить</button>
                     </div>
