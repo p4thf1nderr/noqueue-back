@@ -21,8 +21,6 @@ class MallController extends Controller
     {
         $input = $request->all();
 
-        var_dump($input);
-
         if (isset($input['\lat']) && isset($input['lng'])) {
 
             $user = new Location($input['\lat'], $input['lng']);
