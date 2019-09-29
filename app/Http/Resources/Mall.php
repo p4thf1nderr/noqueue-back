@@ -25,6 +25,7 @@ class Mall extends JsonResource
             'cafes' => CourtResource::collection($this->whenLoaded('courts')),
             // 'categories' => $categories->unique()->toArray(), //TODO: через resource, чтобы не отображать в списке
             'distance' => $this->distance,
+            'description' => $this->description,
         ];
     }
 }
