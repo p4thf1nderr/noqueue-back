@@ -8,10 +8,11 @@ class Category extends Model
 {
     public $timestamps = false;
 
-    const BURGER = 1;
-    const PIZZA = 2;
-    const WOK = 3;
-    const WHOPPER = 4;
+    const BURGER  = 1;
+    const WOK     = 2;
+    const PIZZA   = 3;
+    const TWISTER = 4;
+    const SNACK   = 5;
 
     public function goods()
     {

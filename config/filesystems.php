@@ -53,6 +53,12 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
+        'cdn' => [
+            'driver' => 'local',
+            'root' => env('CDN_URL'),
+            'url' => env('CDN_URL').'/uploads/image/upload/v1569709223/',
+            'visibility' => 'public',
+        ],
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
