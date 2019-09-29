@@ -21,9 +21,11 @@ class MallController extends Controller
     {
         $input = $request->all();
 
-        if (isset($input['lat']) && isset($input['lng'])) {
+        var_dump($input);
 
-            $user = new Location($input['lat'], $input['lng']);
+        if (isset($input['\lat']) && isset($input['lng'])) {
+
+            $user = new Location($input['\lat'], $input['lng']);
             $malls = Mall::all()->each(function($item) use ($user) {
             
                 $crds = explode(" ", $item->coordinates);
