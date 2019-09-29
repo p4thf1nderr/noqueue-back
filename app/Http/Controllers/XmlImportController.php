@@ -7,6 +7,8 @@ use Mtownsend\XmlToArray\XmlToArray;
 use App\Models\FoodCourt;
 use App\Models\Category;
 use App\Models\Good;
+use App\Models\Photo;
+
 
 
 class XmlImportController extends Controller
@@ -19,8 +21,6 @@ class XmlImportController extends Controller
             $path = public_path() . '/assets/imports';
 
             $name = $file->getClientOriginalName();
-
-            var_dump($path, $name);
 
             $file->move($path, $name);
 
@@ -63,6 +63,12 @@ class XmlImportController extends Controller
         $good->court_id = $array['offers']['offer']['court_id'];
         $good->category_id = $array['offers']['offer']['category_id'];
         $good->save();
+
+
+        $photo = new Photo();
+        $photo->good_id = $good->id;
+        $photo->link = $array['offers']['offer']['picture'];
+        $photo->save();
 
         return response()->json([
             'data' => 'Success'
