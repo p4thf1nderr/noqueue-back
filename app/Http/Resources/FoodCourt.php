@@ -19,7 +19,7 @@ class FoodCourt extends JsonResource
     {
         $ctg = $this->goods->map(function($item){
             $goods = $item->category->goods->map(function($item) {
-                    $link = $item->photo->first()->link;
+                    $link = $item->photo()->exists() ? $item->photo->first()->link : "";
                     $item['link'] = $link;
                 return $item;
             });

@@ -107,10 +107,10 @@ class PhotosTableSeeder extends Seeder
         ]);
 
         Photo::create([
-            'good_id' => 5,
+            'good_id' => 6,
             'created_at' => Carbon::now()->setTimezone('Europe/Moscow'),
             'updated_at' => Carbon::now()->setTimezone('Europe/Moscow'),
-            'link' => "https://res.cloudinary.com/di3sdycra/image/upload/v1569714312/goods/royal_hym8pc.png",
+            'link' => "https://res.cloudinary.com/di3sdycra/image/upload/v1569714312/goods/twisterostry_jd00ac.png",
         ]);
 
 
@@ -118,7 +118,7 @@ class PhotosTableSeeder extends Seeder
             'good_id' => 8,
             'created_at' => Carbon::now()->setTimezone('Europe/Moscow'),
             'updated_at' => Carbon::now()->setTimezone('Europe/Moscow'),
-            'link' => "https://res.cloudinary.com/di3sdycra/image/upload/v1569714312/goods/royal_hym8pc.png",
+            'link' => "https://res.cloudinary.com/di3sdycra/image/upload/v1569714313/goods/syrnye-podushechki-7-sht_mplt5y.png",
         ]);
     }
 }
