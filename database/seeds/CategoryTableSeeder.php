@@ -21,10 +21,6 @@ class CategoryTableSeeder extends Seeder
         ]);
 
         Category::create([
-            'title' => 'Пиццы',
-        ]);
-
-        Category::create([
             'title' => 'Твистеры',
         ]);
 

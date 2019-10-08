@@ -8,6 +8,7 @@ use App\Models\FoodCourt;
 use App\Models\Category;
 use App\Models\Good;
 use App\Models\Photo;
+use Log;
 
 
 
@@ -24,10 +25,9 @@ class XmlImportController extends Controller
 
             $file->move($path, $name);
 
-            
-            return response()->json([
-                'data' => 'Success. Please confirm'
-            ]);
+            return redirect()->action(
+                'XmlImportController@confirm'
+            );
         }
     }
 
@@ -36,7 +36,7 @@ class XmlImportController extends Controller
 
     public function confirm()
     {
-        $xmlfile = file_get_contents("/home/ubuntu/server/noqueue-back/public/assets/imports"."/"."noqueue.xml");             
+        $xmlfile = file_get_contents("/var/www/html/noqueue-back/public/assets/imports"."/"."noqueue.xml");             
         $array = XmlToArray::convert($xmlfile);
 
         // сохранение компании
@@ -47,6 +47,7 @@ class XmlImportController extends Controller
         $court->photo = $array['company_img'];
         $court->save();
 
+
         // сохранене категорий товаров
 
         foreach ($array['categories']['category'] as $value) {
@@ -55,20 +56,21 @@ class XmlImportController extends Controller
             $category->save();
         }
 
-        $good = new Good();
-        $good->title = $array['offers']['offer']['name'];
-        $good->cooking_time = $array['offers']['offer']['time'];
-        $good->description = $array['offers']['offer']['description'];
-        $good->price = $array['offers']['offer']['price'];
-        $good->court_id = $array['offers']['offer']['court_id'];
-        $good->category_id = $array['offers']['offer']['category_id'];
-        $good->save();
+        foreach ($array['offers']['offer'] as $offer) {
+            $good = new Good();
+            $good->title = $offer['name'];
+            $good->cooking_time = $offer['time'];
+            $good->description = $offer['description'];
+            $good->price = $offer['price'];
+            $good->court_id = $offer['court_id'];
+            $good->category_id = $offer['category_id'];
+            $good->save();
 
-
-        $photo = new Photo();
-        $photo->good_id = $good->id;
-        $photo->link = $array['offers']['offer']['picture'];
-        $photo->save();
+            $photo = new Photo();
+            $photo->good_id = $good->id;
+            $photo->link = $offer['picture'];
+            $photo->save();            
+        }
 
         return response()->json([
             'data' => 'Success'

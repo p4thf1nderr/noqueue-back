@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shop>
-    <description>Кафе быстрого питания Кабанчик</description>
+    <description>ПиццаФабрика - сеть семейных пиццерий</description>
     <mall_id>1</mall_id>
-    <company>ООО Кабанчик</company>
-    <company_img>https://res.cloudinary.com/di3sdycra/image/upload/v1569744445/photo_2019-09-29_11-00-03_adnh8x.jpg</company_img>
-    <url>http://noqueue.ru</url>
+    <company>ПиццаФабрика</company>
+    <company_img>https://res.cloudinary.com/di3sdycra/image/upload/v1569713662/malls/pf_vzr2jv.jpg</company_img>
+    <url>http://88005500600.ru</url>
     <currencies>
         <currency id="RUR" rate="1" />
     </currencies>
     <categories>
-            <category id="1">Бургеры</category>
-            <category id="2">Лапша Вок</category>
+            <category id="1">Пиццы</category>
+            <category id="2">Роллы</category>
+            <category id="3">Лапша Вок</category>
     </categories>
 <offers>
     <offer id="1" available="true">
         <url>http://noqueue.ru/goods/1/</url>
-        <price>246.00</price>
+        <price>500.00</price>
         <currencyId>RUR</currencyId>
         <categoryId>1</categoryId>
-        <picture>https://res.cloudinary.com/di3sdycra/image/upload/v1569744713/goods/gamburger-steyk_rmmine.jpg</picture>
+        <picture>https://res.cloudinary.com/di3sdycra/image/upload/v1569714312/goods/pizza-peperoni-2_pof86a.jpg</picture>
         <store>true</store>
         <pickup>true</pickup>
         <delivery>true</delivery>
             <name>
-                Гамбургер - стейк
+                Пепперони
             </name>
             <court_id>
                 2
@@ -35,9 +36,60 @@
                 00:05:00
             </time>
             <description>
-                Рубленый бифштекс из натуральной цельной говядины на карамелизованной булочке, заправленной горчицей, кетчупом, луком и кусочком маринованного огурчика.  
+                Горячий темперамент! Для тех, кто любит поострее. Томатный соус, сыр, пепперони. 
             </description>
      </offer>
+     <offer id="2" available="true">
+        <url>http://noqueue.ru/goods/1/</url>
+        <price>500.00</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://res.cloudinary.com/di3sdycra/image/upload/v1569744713/goods/gamburger-steyk_rmmine.jpg</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+            <name>
+                Итальянцы в России
+            </name>
+            <court_id>
+                2
+            </court_id>
+            <category_id>
+                1
+            </category_id>
+            <time>
+                00:05:00
+            </time>
+            <description>
+                Идеальное сочетание идеальных ингредиентов итальянской пиццы. Фирменный соус, сыр, много ветчины, шампиньоны, помидоры. 
+            </description>
+     </offer>
+     <offer id="3" available="true">
+        <url>http://noqueue.ru/goods/1/</url>
+        <price>500.00</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>1</categoryId>
+        <picture>https://res.cloudinary.com/di3sdycra/image/upload/v1569714312/goods/pizza_bogatyrskaya_16092015_164556_Z0VR_sk8prt.jpg</picture>
+        <store>true</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+            <name>
+                Богатырская
+            </name>
+            <court_id>
+                2
+            </court_id>
+            <category_id>
+                1
+            </category_id>
+            <time>
+                00:05:00
+            </time>
+            <description>
+                Сытная пицца, которая подарит богатырскую силу. Фирменный соус, сыр, кусочки говядины со специями, шампиньоны, помидоры, маслины. 
+            </description>
+     </offer>
+
  </offers>
 </shop>
 

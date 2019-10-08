@@ -27,4 +27,4 @@ Route::post('v1/address', 'Api\v1\GeoController@address');
 
 Route::post('import', 'XmlImportController@import');
 
-Route::post('confirm', 'XmlImportController@confirm');
+Route::get('confirm', 'XmlImportController@confirm');

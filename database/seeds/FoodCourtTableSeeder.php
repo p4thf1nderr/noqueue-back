@@ -14,13 +14,6 @@ class FoodCourtTableSeeder extends Seeder
     public function run()
     {
         FoodCourt::create([
-            'name' => 'ПиццаФабрика',
-            'mall_id' => Mall::inRandomOrder()->first()->id,
-            'description' => 'Сеть семейных ресторанов ПиццаФабрика',
-            'photo' => "https://res.cloudinary.com/di3sdycra/image/upload/v1569713662/malls/pf_vzr2jv.jpg",
-        ]);
-
-        FoodCourt::create([
             'name' => 'Бургер Кинг',
             'mall_id' => Mall::inRandomOrder()->first()->id,
             'description' => 'Компания является второй по величине сетью быстрого питания в мире.',

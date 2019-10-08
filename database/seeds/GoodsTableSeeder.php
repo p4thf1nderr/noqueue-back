@@ -96,35 +96,6 @@ class GoodsTableSeeder extends Seeder
             'category_id' => Category::SNACK,
         ]);
 
-
-        Good::create([
-            'title' => 'Пицца пепперони',
-            'cooking_time' => '00:06:00',
-            'description' => 'Горячий темперамент! Для тех, кто любит поострее. Томатный соус, сыр, пепперони.',
-            'price' => 500,
-            'court_id' => FoodCourt::inRandomOrder()->first()->id,
-            'category_id' => Category::PIZZA,
-        ]);
-
-        Good::create([
-            'title' => 'Пицца 4 сыра',
-            'cooking_time' => '00:08:00',
-            'description' => 'Удовольствие из 4 лучших сортов сыра. Томатный соус, сыр моцарелла, сыр пармезан, сыр гауда, сыр с плесенью.',
-            'price' => 510,
-            'court_id' => FoodCourt::inRandomOrder()->first()->id,
-            'category_id' => Category::PIZZA,
-        ]);
-
-        Good::create([
-            'title' => 'Богатырская',
-            'cooking_time' => '00:08:00',
-            'description' => 'Сытная пицца, которая подарит богатырскую силу. Фирменный соус, сыр, кусочки говядины со специями, шампиньоны, помидоры, маслины.',
-            'price' => 520,
-            'court_id' => FoodCourt::inRandomOrder()->first()->id,
-            'category_id' => Category::PIZZA,
-        ]);
-
-
         Good::create([
             'title' => 'Соба с грибами',
             'cooking_time' => '00:08:00',
