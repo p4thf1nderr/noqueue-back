@@ -72,8 +72,6 @@ class XmlImportController extends Controller
             $photo->save();            
         }
 
-        return response()->json([
-            'data' => 'Success'
-        ]);
+        return redirect('/');
     }
 }
