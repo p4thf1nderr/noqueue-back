@@ -10,8 +10,8 @@ class Category extends Model
 
     const BURGER  = 1;
     const WOK     = 2;
-    const SNACK   = 3;
-    const TWISTER = 4;
+    const TWISTER   = 3;
+    const SNACK = 4;
     const PIZZA   = 5;
 
     public function goods()
