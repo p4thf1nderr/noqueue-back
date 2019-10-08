@@ -85,7 +85,7 @@
                     <!-- Поле MAX_FILE_SIZE должно быть указано до поля загрузки файла -->
                     <input type="hidden" name="xml" value="30000000" />
                     <!-- Название элемента input определяет имя в массиве $_FILES -->
-                        <h3>Импорт товаров в сервис noqueue:</h3> <input name="xml" type="file" />
+                        <h3>Интеграция с сервисом NoQueue:</h3> <input name="xml" type="file" />
                     <input type="submit" value="Отправить файл" />
                 </form>
                 </div>
